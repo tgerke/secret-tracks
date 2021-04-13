@@ -72,8 +72,9 @@ class: left bottom hide-count
     </div>
   </div>
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mansalva">
 .talk-meta[
-.talk-title[
+.talk-title-custom[
 # `r rmarkdown::metadata$title`
 
 `r rmarkdown::metadata$subtitle`
@@ -130,5 +131,10 @@ class: left bottom hide-count
   left: 20%;
   top: 10%;
   margin-left: -200px; /*half the width*/
+}
+.talk-title-custom h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: "Mansalva";
 }
 ```
