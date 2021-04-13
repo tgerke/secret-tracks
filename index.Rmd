@@ -108,9 +108,51 @@ class: left bottom hide-count
 ```
 
 ---
-### Slide 1
+### Why this talk?
 
+> I believe every time I am in meeting with Travis, he mentions R packages to analyze & visualize data, create fancy presentations, etc.  In other words, Travis knows R packages for everything.
 
+.right[.small[&#x2014; Rodrigo Carvajal]]
+
+---
+### Why this talk?
+
+> I believe every time I am in meeting with Travis, he mentions R packages to analyze & visualize data, create fancy presentations, etc.  <strike>In other words, Travis knows R packages for everything.</strike>
+
+.right[.small[&#x2014; Rodrigo Carvajal]]
+
+<br>
+
+> I believe every time I am in meeting with Travis, he mentions R packages to analyze & visualize data, create fancy presentations, etc.  .red[In other words, Travis spends too much time on Twitter.]
+
+.right[.small[&#x2014; Me]]
+
+---
+### Follow these resources!
+
+.pull-left[
+
+- [@icymi_r](https://twitter.com/icymi_r)
+  - R posts you might have missed!
+  - Searchable history [here](https://alastairrushworth.github.io/searchable/searchable.html)
+  
+- [@dataandme](https://twitter.com/dataandme)  
+  - The OG "in case you missed it" of R Twitter
+
+- [&#35;TidyTuesday](https://twitter.com/search?q=%23TidyTuesday)
+  - [@thomas_mock](https://twitter.com/thomas_mock) to participate
+
+- [@grrrck](https://twitter.com/grrrck/) needs no introduction
+
+]
+
+.pull-right[
+
+.position-top[
+![](images/tidytuesday.png)
+]
+
+]
 
 ```{css, echo=FALSE}
 .h-center {
@@ -124,6 +166,12 @@ class: left bottom hide-count
 .w-75 {
   width: 75%;
 }
+.w-50 {
+  width: 50%;
+}
+.w-25 {
+  width: 25%;
+}
 .fixedContainer {
   position: fixed;
   width: 400px;
@@ -136,5 +184,11 @@ class: left bottom hide-count
   margin-top: 0;
   margin-bottom: 20px;
   font-family: "Mansalva";
+}
+.position-top {
+  position: fixed;
+  top: 0;
+  left: 60%;
+  width: 25%;
 }
 ```
