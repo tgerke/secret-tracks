@@ -1,0 +1,132 @@
+body{
+  background-color:#29cfc4;
+  margin:0;
+  padding:0;
+}
+
+.container{
+  width:600px;
+  height:400px;
+  margin:50px auto;
+}
+  .cassette-top{
+    width:550px;
+    height:300px;
+    background:#BEBEBE;
+    border-radius:10px;
+    z-index:0;
+  }
+    .cassette-inner-1{
+      width:500px;
+      height:200px;
+      border:1px solid grey;
+      z-index:10;
+      display:block;
+      position:absolute;
+      margin-left:25px;
+      margin-top:25px;
+      background:#BEBEBE;
+      border-radius:15px;
+    }
+ul.rainbow-strips{
+  margin:0;
+  padding:0;
+}
+    ul.rainbow-strips li{
+      list-style-type:none;
+      height:40px; 
+      display:block;
+      position:absolute;
+      z-index:20;
+    }
+    ul.rainbow-strips li.purple{
+      width:500px;
+      margin-top:40px;
+      background:#522575;
+      position:absolute;
+      display:block;
+    }
+    ul.rainbow-strips li.red{
+      width:500px;
+      background:#ff1919;
+      position:absolute;
+      display:block;
+      margin-top:80px;
+    }
+    ul.rainbow-strips li.orange{
+      width:500px;
+      background:#ee7919;
+      position:absolute;
+      display:block;
+      margin-top:120px;
+    }
+     ul.rainbow-strips li.green{
+      width:500px;
+      background:green;
+      position:absolute;
+      display:block;
+      margin-top:160px;
+      border-bottom-left-radius:10px;
+      border-bottom-right-radius:10px;
+    }
+    .cassette-inner-2{
+      z-index:40;
+      position:absolute;
+      display:block;
+      width:300px;
+      height:100px;
+      background:white;
+      margin-left:100px;
+      margin-top:50px;
+      border-radius:20px;
+    }
+.wheel-left{
+  background:black;
+  z-index:50;
+  position:absolute;
+  display:block;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  margin-top:25px;
+  margin-left:25px;
+}
+.center-box{
+  width:130px;
+  position:absolute;
+  display:block;
+  height:70px;
+  background:black;
+  margin-left:85px;
+  margin-top:15px;
+}
+.wheel-right{
+  background:black;
+  z-index:50;
+  position:absolute;
+  display:block;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  margin-top:25px;
+  margin-left:225px;
+}
+.wheel-inner{
+  z-index:60;
+  position:absolute;
+  display:block;
+  color:grey;
+  margin-left:2px;
+  margin-top:-5px;
+  font-size:55px; 
+}
+  .cassette-bottom{
+    width:560px;
+    height:100px;
+    background:#BEBEBE;
+    z-index:0;
+    margin-left:-5px;
+    margin-top:-70px;
+    border-radius:10px;
+    box-shadow: 0px 5px 5px #888888;
+  }

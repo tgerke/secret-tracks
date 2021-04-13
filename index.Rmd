@@ -1,0 +1,134 @@
+---
+title: "&nbsp;&nbsp;Secret tRacks"
+subtitle: "R packages/functions you didn't know you were waiting for"
+author:
+  - Travis Gerke, ScD
+institute: ".small[.blue-medium[Moffitt Cancer Center ].blue[ :: ].blue-light[Health Informatics]]"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [libs/css/moffitt-xaringan.css, libs/css/moffitt-xaringan-extra.css, libs/css/cassette.css]
+    seal: false
+    nature:
+      titleSlideClass: ["bottom", "left"]
+      slideNumberFormat: "%current%"
+      highlightStyle: atom-one-light
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE, 
+  hiline = TRUE
+)
+```
+
+name: title
+class: left bottom hide-count
+
+<!-- Title Slide -->
+
+<!-- cassette css credit: https://codepen.io/wangchristy/pen/EjdOzK --> 
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <div class="fixedContainer">
+    <div class="cassette-top">
+      <div class="cassette-inner-1">
+         <ul class="rainbow-strips">
+            <li class="purple">
+            </li>
+            <li class="red">
+            </li>
+             <li class="orange">
+           </li>
+           <li class="green">
+           </li>
+          </ul>
+        <div class="cassette-inner-2">
+          <div class="wheel-left">
+            <div class="wheel-inner">
+              <i class="fa fa-cog fa-spin"></i>
+            </div>
+          </div>
+          <div class="center-box">
+          </div>
+          <div class="wheel-right">
+            <div class="wheel-inner">
+              <i class="fa fa-cog fa-spin"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cassette-bottom">
+    </div>
+  </div>
+
+.talk-meta[
+.talk-title[
+# `r rmarkdown::metadata$title`
+
+`r rmarkdown::metadata$subtitle`
+]
+
+.talk-author[
+`r paste(rmarkdown::metadata$author, collapse = " &middot; ")`<br>
+.moffitt-gray[`r paste(rmarkdown::metadata$institute, collapse = ", ")`]
+]
+
+.talk-date.moffitt-gray[
+`r knitr::knit(text = rmarkdown::metadata$date)`
+]
+]
+
+
+    
+```{css echo=FALSE}
+/* Define title slide image or logo here */
+.talk-logo {
+  width: 400px;
+  height: 750px;
+  position: absolute;
+  top: 6%;
+  right: 7%;
+  /* background-image: url('img/r4ds-cover.png'); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: contain;
+}
+```
+
+---
+### Slide 1
+
+
+
+```{css, echo=FALSE}
+.h-center {
+  margin: 0 auto;
+}
+.v-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.w-75 {
+  width: 75%;
+}
+.fixedContainer {
+  position: fixed;
+  width: 400px;
+  height: 100px;
+  left: 20%;
+  top: 10%;
+  margin-left: -200px; /*half the width*/
+}
+```
