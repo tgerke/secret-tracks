@@ -30,6 +30,9 @@ knitr::opts_chunk$set(
   warning = FALSE, 
   hiline = TRUE
 )
+
+library(icons)
+link_icon <- icon_style(fontawesome("link", style = "solid"), scale=.5, fill="#FE6B00", 'margin-bottom' = "8px")
 ```
 
 name: title
@@ -154,6 +157,65 @@ class: left bottom hide-count
 
 ]
 
+---
+class: inverse, center
+
+<br><br>
+<span style="font-size:1.35em">And now</span><br>
+<span style="font-size:3em">in no particular order</span><br>
+<span style="font-size:1.23em">are a bunch of</span><br>
+<span style="font-size:5em; font-family: Mansalva">secret tRacks</span>
+
+<br><br>
+.small.red[I will not do full demos: feel free to interrupt for clarification.]
+
+---
+### Let [`pak` `r link_icon`](https://pak.r-lib.org/) install your packages
+
+It's faster and more convenient (e.g. for BioC / GitHub) than `devtools`, `remotes`, and `install.packages`
+
+.w-50.h-center[
+![](images/pak.svg)
+]
+
+---
+### [`asciicast` `r link_icon`](https://github.com/r-lib/asciicast) will make animated `.svg` &#x1F92F;
+
+- Works for recording terminal input/output (submitted from R)
+  - Way more lightweight than `.gif` or `.mov` formats
+
+.w-75.h-center[
+![](images/asciicast.svg)
+]
+
+---
+### Find html/unicode for emojis with [`ermoji` `r link_icon`](https://github.com/gadenbuie/ermoji)
+
+.w-40.h-center[
+![](images/ermoji.png)
+]
+
+---
+### Use web icons with [`icons` `r link_icon`](https://pkg.mitchelloharawild.com/icons/) &#x1F448;
+
+.small[
+- Includes: 
+  - Font Awesome
+  - Ionicons
+  - Academicons
+  - Simple Icons
+  - Google’s Material Design
+  - Octicons
+  - Feather Icons
+]
+
+```{r}
+icons::fontawesome("dna", style = "solid")
+icons::ionicons("git-pull-request-outline")
+```
+
+
+
 ```{css, echo=FALSE}
 .h-center {
   margin: 0 auto;
@@ -168,6 +230,9 @@ class: left bottom hide-count
 }
 .w-50 {
   width: 50%;
+}
+.w-40 {
+  width: 40%;
 }
 .w-25 {
   width: 25%;
