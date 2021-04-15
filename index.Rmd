@@ -248,7 +248,7 @@ Replace `png()`/`jpeg()`/`tiff()` with `agg_png()`/`agg_jpeg()`/`agg_tiff()`
 ### Play `gif`s from the start with [`xaringanExtra` `r link_icon`](https://github.com/gadenbuie/xaringanExtra)
 
 - Otherwise, they run endlessly in the background and you often land on a slide mid-gif
-  - With `freezeframe`, the `gif` doesn't start until you click
+  - `freezeframe` plays the `gif` from the beginning, restarts it with a click
 
 .pull-left[
 .small-code[
