@@ -183,7 +183,7 @@ It's faster and more convenient (e.g. for BioC / GitHub) than `devtools`, `remot
 
 - Works for recording R console input/output
   - Way more lightweight than `.gif` or `.mov` formats
-  - See [`images/make-star-wars-svg.R`](images/make-star-wars-svg.R) in this repo for the below
+  - See [`images/make-star-wars-svg.R`](images/make-star-wars-svg.R) in [this repo](https://github.com/tgerke/secret-tracks) for the below
 
 .w-50.h-center[
 ![](images/starwars.svg)
@@ -215,7 +215,14 @@ icons::fontawesome("dna", style = "solid")
 icons::ionicons("git-pull-request-outline")
 ```
 
+---
+### View object differences with [`waldo` `r link_icon`](https://waldo.r-lib.org/)
 
+This is much nicer to use than `all.equal()`
+
+.w-75.h-center[
+![](images/waldo-example.svg)
+]
 
 ```{css, echo=FALSE}
 .h-center {
