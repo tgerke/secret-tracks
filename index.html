@@ -9,6 +9,14 @@
     <script src="libs/freezeframe/freezeframe.min.js"></script>
     <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
     <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/core-js/shim.min.js"></script>
+    <script src="libs/react/react.min.js"></script>
+    <script src="libs/react/react-dom.min.js"></script>
+    <script src="libs/reactwidget/react-tools.js"></script>
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/reactable-binding/reactable.js"></script>
     <link rel="stylesheet" href="libs/css/moffitt-xaringan.css" type="text/css" />
     <link rel="stylesheet" href="libs/css/moffitt-xaringan-extra.css" type="text/css" />
     <link rel="stylesheet" href="libs/css/cassette.css" type="text/css" />
@@ -151,7 +159,7 @@ class: inverse, center
 &lt;span style="font-size:5em; font-family: Mansalva"&gt;secret tRacks&lt;/span&gt;
 
 &lt;br&gt;&lt;br&gt;
-.small.red[I will not do full demos: feel free to interrupt for clarification.]
+.small.red[The slides do not conatin full demos: feel free to interrupt for clarification.]
 
 ---
 ### Let [`pak` &lt;svg viewBox="0 0 512 512" style="position:relative;display:inline-block;top:.1em;fill:#FE6B00;height:0.5em;margin-bottom:8px;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt;](https://pak.r-lib.org/) install your packages
@@ -262,6 +270,118 @@ xaringanExtra::use_freezeframe(trigger = "click")
 ]
 ]
 
+---
+### Tabulate counts with [`janitor::tabyl()` &lt;svg viewBox="0 0 512 512" style="position:relative;display:inline-block;top:.1em;fill:#FE6B00;height:0.5em;margin-bottom:8px;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt;](https://cran.r-project.org/web/packages/janitor/vignettes/tabyls.html)
+
+Though I &amp;#x2764;&amp;#xFE0F; `table()`/`xtabs()` for nostalgic reasons, I'll never again use them
+
+.panelset[
+.panel[.panel-name[Old way]
+.small-code[
+
+```r
+library(dplyr)
+
+table(starwars$gender, starwars$eye_color)
+```
+
+```
+##            
+##             black blue blue-gray brown dark gold green, yellow hazel orange
+##   feminine      2    6         0     5    0    0             0     2      0
+##   masculine     8   12         1    15    1    1             1     1      8
+##            
+##             pink red red, blue unknown white yellow
+##   feminine     0   0         1       0     0      1
+##   masculine    1   5         0       2     0     10
+```
+]
+]
+.panel[.panel-name[New way]
+.small-code[
+
+```r
+library(dplyr)
+library(janitor)
+
+starwars %&gt;%
+  tabyl(gender, eye_color)
+```
+
+```
+##     gender black blue blue-gray brown dark gold green, yellow hazel orange pink
+##   feminine     2    6         0     5    0    0             0     2      0    0
+##  masculine     8   12         1    15    1    1             1     1      8    1
+##       &lt;NA&gt;     0    1         0     1    0    0             0     0      0    0
+##  red red, blue unknown white yellow
+##    0         1       0     0      1
+##    5         0       2     0     10
+##    0         0       1     1      0
+```
+]
+]
+.panel[.panel-name[New way+]
+.small-code[
+
+```r
+starwars %&gt;%
+  tabyl(gender, eye_color, show_na = FALSE) %&gt;%
+  adorn_totals("row") %&gt;%
+  adorn_percentages("col") %&gt;%
+  adorn_pct_formatting(digits = 0) %&gt;%
+  adorn_ns
+```
+
+```
+##     gender     black      blue blue-gray     brown     dark     gold
+##   feminine  20%  (2)  33%  (6)    0% (0)  25%  (5)   0% (0)   0% (0)
+##  masculine  80%  (8)  67% (12)  100% (1)  75% (15) 100% (1) 100% (1)
+##      Total 100% (10) 100% (18)  100% (1) 100% (20) 100% (1) 100% (1)
+##  green, yellow    hazel   orange     pink      red red, blue  unknown    yellow
+##         0% (0)  67% (2)   0% (0)   0% (0)   0% (0)  100% (1)   0% (0)   9%  (1)
+##       100% (1)  33% (1) 100% (8) 100% (1) 100% (5)    0% (0) 100% (2)  91% (10)
+##       100% (1) 100% (3) 100% (8) 100% (1) 100% (5)  100% (1) 100% (2) 100% (11)
+```
+]
+]
+.panel[.panel-name[New way++]
+.small-code[
+
+```r
+starwars %&gt;%
+  tabyl(gender, eye_color, show_na = FALSE) %&gt;%
+  adorn_totals("row") %&gt;%
+  adorn_percentages("col") %&gt;%
+  adorn_pct_formatting(digits = 0) %&gt;%
+  adorn_ns %&gt;%
+  reactable::reactable()
+```
+]
+.smaller[
+<div id="htmlwidget-9e560a64f53ee6c083c3" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-9e560a64f53ee6c083c3">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"gender":["feminine","masculine","Total"],"black":["20%  (2)","80%  (8)","100% (10)"],"blue":["33%  (6)","67% (12)","100% (18)"],"blue-gray":["0% (0)","100% (1)","100% (1)"],"brown":["25%  (5)","75% (15)","100% (20)"],"dark":["0% (0)","100% (1)","100% (1)"],"gold":["0% (0)","100% (1)","100% (1)"],"green, yellow":["0% (0)","100% (1)","100% (1)"],"hazel":["67% (2)","33% (1)","100% (3)"],"orange":["0% (0)","100% (8)","100% (8)"],"pink":["0% (0)","100% (1)","100% (1)"],"red":["0% (0)","100% (5)","100% (5)"],"red, blue":["100% (1)","0% (0)","100% (1)"],"unknown":["0% (0)","100% (2)","100% (2)"],"yellow":["9%  (1)","91% (10)","100% (11)"]},"columns":[{"accessor":"gender","name":"gender","type":"character"},{"accessor":"black","name":"black","type":"character"},{"accessor":"blue","name":"blue","type":"character"},{"accessor":"blue-gray","name":"blue-gray","type":"character"},{"accessor":"brown","name":"brown","type":"character"},{"accessor":"dark","name":"dark","type":"character"},{"accessor":"gold","name":"gold","type":"character"},{"accessor":"green, yellow","name":"green, yellow","type":"character"},{"accessor":"hazel","name":"hazel","type":"character"},{"accessor":"orange","name":"orange","type":"character"},{"accessor":"pink","name":"pink","type":"character"},{"accessor":"red","name":"red","type":"character"},{"accessor":"red, blue","name":"red, blue","type":"character"},{"accessor":"unknown","name":"unknown","type":"character"},{"accessor":"yellow","name":"yellow","type":"character"}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"dataKey":"2873db20f6508cc13cb9b8904e4a2bcf","key":"2873db20f6508cc13cb9b8904e4a2bcf"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+]
+]
+.panel[.panel-name[&amp;#x1F913; Bonus]
+.small-code[
+
+```r
+starwars %&gt;%
+  tabyl(gender, eye_color, show_na = FALSE) %&gt;%
+  chisq.test()
+```
+
+```
+## 
+## 	Pearson's Chi-squared test
+## 
+## data:  .
+## X-squared = 15.917, df = 13, p-value = 0.2537
+```
+]
+]
+
+]
 &lt;style type="text/css"&gt;
 .h-center {
   margin: 0 auto;

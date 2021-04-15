@@ -35,6 +35,12 @@ library(icons)
 link_icon <- icon_style(fontawesome("link", style = "solid"), scale=.5, fill="#FE6B00", 'margin-bottom' = "8px")
 
 xaringanExtra::use_freezeframe(trigger = "click")
+xaringanExtra::use_panelset()
+
+library(reactable)
+# makes code chunk output render as html when appropriate
+# https://github.com/yihui/xaringan/issues/293
+options(htmltools.preserve.raw = FALSE)
 ```
 
 name: title
@@ -169,7 +175,7 @@ class: inverse, center
 <span style="font-size:5em; font-family: Mansalva">secret tRacks</span>
 
 <br><br>
-.small.red[I will not do full demos: feel free to interrupt for clarification.]
+.small.red[The slides do not conatin full demos: feel free to interrupt for clarification.]
 
 ---
 ### Let [`pak` `r link_icon`](https://pak.r-lib.org/) install your packages
@@ -272,6 +278,79 @@ xaringanExtra::use_freezeframe(trigger = "click")
 ]
 ]
 
+---
+### Tabulate counts with [`janitor::tabyl()` `r link_icon`](https://cran.r-project.org/web/packages/janitor/vignettes/tabyls.html)
+
+Though I &#x2764;&#xFE0F; `table()`/`xtabs()` for nostalgic reasons, I'll never again use them
+
+.panelset[
+.panel[.panel-name[Old way]
+.small-code[
+```{r}
+library(dplyr)
+
+table(starwars$gender, starwars$eye_color)
+```
+]
+]
+.panel[.panel-name[New way]
+.small-code[
+```{r}
+library(dplyr)
+library(janitor)
+
+starwars %>%
+  tabyl(gender, eye_color)
+```
+]
+]
+.panel[.panel-name[New way+]
+.small-code[
+```{r}
+starwars %>%
+  tabyl(gender, eye_color, show_na = FALSE) %>%
+  adorn_totals("row") %>%
+  adorn_percentages("col") %>%
+  adorn_pct_formatting(digits = 0) %>%
+  adorn_ns
+```
+]
+]
+.panel[.panel-name[New way++]
+.small-code[
+```{r eval=FALSE}
+starwars %>%
+  tabyl(gender, eye_color, show_na = FALSE) %>%
+  adorn_totals("row") %>%
+  adorn_percentages("col") %>%
+  adorn_pct_formatting(digits = 0) %>%
+  adorn_ns %>%
+  reactable::reactable()
+```
+]
+.smaller[
+```{r echo=FALSE}
+starwars %>%
+  tabyl(gender, eye_color, show_na = FALSE) %>%
+  adorn_totals("row") %>%
+  adorn_percentages("col") %>%
+  adorn_pct_formatting(digits = 0) %>%
+  adorn_ns %>%
+  reactable::reactable()
+```
+]
+]
+.panel[.panel-name[&#x1F913; Bonus]
+.small-code[
+```{r}
+starwars %>%
+  tabyl(gender, eye_color, show_na = FALSE) %>%
+  chisq.test()
+```
+]
+]
+
+]
 ```{css, echo=FALSE}
 .h-center {
   margin: 0 auto;
