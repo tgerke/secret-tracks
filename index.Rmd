@@ -181,11 +181,12 @@ It's faster and more convenient (e.g. for BioC / GitHub) than `devtools`, `remot
 ---
 ### [`asciicast` `r link_icon`](https://github.com/r-lib/asciicast) will make animated `.svg` &#x1F92F;
 
-- Works for recording terminal input/output (submitted from R)
+- Works for recording R console input/output
   - Way more lightweight than `.gif` or `.mov` formats
+  - See [`images/make-star-wars-svg.R`](images/make-star-wars-svg.R) in this repo for the below
 
-.w-75.h-center[
-![](images/asciicast.svg)
+.w-50.h-center[
+![](images/starwars.svg)
 ]
 
 ---
