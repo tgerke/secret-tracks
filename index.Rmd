@@ -224,6 +224,24 @@ This is much nicer to use than `all.equal()`
 ![](images/waldo-example.svg)
 ]
 
+---
+### Export graphics with [`ragg` `r link_icon`](https://ragg.r-lib.org/)
+
+Replace `png()`/`jpeg()`/`tiff()` with `agg_png()`/`agg_jpeg()`/`agg_tiff()`
+
+.pull-left[
+.w-75.h-center[
+![](images/ragg-1.png)
+![](images/ragg-2.png)
+]
+]
+.pull-right[
+.w-75.h-center[
+![](images/cairo-1.png)
+![](images/cairo-2.png)
+]
+]
+
 ```{css, echo=FALSE}
 .h-center {
   margin: 0 auto;
