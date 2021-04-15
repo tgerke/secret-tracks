@@ -194,8 +194,15 @@ It's faster and more convenient (e.g. for BioC / GitHub) than `devtools`, `remot
 ---
 ### Find html/unicode for emojis with [`ermoji` `r link_icon`](https://github.com/gadenbuie/ermoji)
 
-.w-40.h-center[
-![](images/ermoji.png)
+.pull-left[
+.h-center[
+![](images/ermoji-1.png)
+]
+]
+.pull-right[
+.h-center[
+![](images/ermoji-2.png)
+]
 ]
 
 ---
