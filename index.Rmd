@@ -343,6 +343,9 @@ starwars %>%
 .panel[.panel-name[&#x1F913; Bonus]
 .small-code[
 ```{r}
+library(dplyr)
+library(janitor)
+
 starwars %>%
   tabyl(gender, eye_color, show_na = FALSE) %>%
   chisq.test()
@@ -351,6 +354,16 @@ starwars %>%
 ]
 
 ]
+
+---
+### Make manuscript tables with [`gtsummary` `r link_icon`](http://www.danieldsjoberg.com/gtsummary/)
+
+Daniel Sjoberg is a true hero.
+
+.h-center[
+![](images/gtsummary.gif)
+]
+
 ```{css, echo=FALSE}
 .h-center {
   margin: 0 auto;
@@ -395,6 +408,6 @@ starwars %>%
   width: 25%;
 }
 .small-code .remark-code {
-  font-size: 60% !important;
+  font-size: 60%;
 }
 ```
