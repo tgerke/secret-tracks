@@ -33,6 +33,8 @@ knitr::opts_chunk$set(
 
 library(icons)
 link_icon <- icon_style(fontawesome("link", style = "solid"), scale=.5, fill="#FE6B00", 'margin-bottom' = "8px")
+
+xaringanExtra::use_freezeframe(trigger = "click")
 ```
 
 name: title
@@ -242,6 +244,27 @@ Replace `png()`/`jpeg()`/`tiff()` with `agg_png()`/`agg_jpeg()`/`agg_tiff()`
 ]
 ]
 
+---
+### Play `gif`s from the start with [`xaringanExtra` `r link_icon`](https://github.com/gadenbuie/xaringanExtra)
+
+- Otherwise, they run endlessly in the background and you often land on a slide mid-gif
+  - With `freezeframe`, the `gif` doesn't start until you click
+
+.pull-left[
+.small-code[
+````markdown
+```{r xaringanExtra-freezeframe, echo=FALSE}`r ''`
+xaringanExtra::use_freezeframe(trigger = "click")
+```
+````
+]
+]
+.pull-right[
+.w-40.h-center[
+![](images/basketball.gif)
+]
+]
+
 ```{css, echo=FALSE}
 .h-center {
   margin: 0 auto;
@@ -263,6 +286,9 @@ Replace `png()`/`jpeg()`/`tiff()` with `agg_png()`/`agg_jpeg()`/`agg_tiff()`
 .w-25 {
   width: 25%;
 }
+.w-20 {
+  width: 20%;
+}
 .fixedContainer {
   position: fixed;
   width: 400px;
@@ -281,5 +307,8 @@ Replace `png()`/`jpeg()`/`tiff()` with `agg_png()`/`agg_jpeg()`/`agg_tiff()`
   top: 0;
   left: 60%;
   width: 25%;
+}
+.small-code .remark-code {
+  font-size: 60% !important;
 }
 ```
