@@ -440,6 +440,13 @@ girafe(ggobj = plot_grid(gg1, gg2), width_svg = 8, height_svg = 2.4)
 ]
 
 ---
+### Format your code with [`styler` `r link_icon`](https://styler.r-lib.org/)
+
+.w-75.h-center[
+![](images/styler.gif)
+]
+
+---
 ### Credits `r icon_style(fontawesome("twitter", style = "brands"), scale=.5, fill="#1DA1F2", 'margin-bottom' = "8px")`
 
 .pull-left[
@@ -448,15 +455,23 @@ girafe(ggobj = plot_grid(gg1, gg2), width_svg = 8, height_svg = 2.4)
 [@dataandme](https://twitter.com/dataandme) (`asciicast`) <br>
 [@grrrck](https://twitter.com/grrrck/) (`ermoji`, `xaringanExtra`) <br>
 [@mitchoharawild](https://twitter.com/mitchoharawild) (`icon`) <br>
-[@hadleywickham](https://twitter.com/hadleywickham) (`waldo`) 
+[@hadleywickham](https://twitter.com/hadleywickham) (`waldo`) <br>
+[@thomasp85](https://twitter.com/thomasp85) (`ragg`) 
 ]
 .pull-right[
-[@thomasp85](https://twitter.com/thomasp85) (`ragg`) <br>
 [@samfirke](https://twitter.com/samfirke) (`janitor`) <br>
 [@statistishdan](https://twitter.com/statistishdan) (`gtsummary`) <br>
 [@ClausWilke](https://twitter.com/ClausWilke) (`ggtext`) <br>
 [@MilesMcBain](https://twitter.com/MilesMcBain) (`datapasta`) <br>
-[@DavidGohel](https://twitter.com/DavidGohel) (`ggiraph`)
+[@DavidGohel](https://twitter.com/DavidGohel) (`ggiraph`) <br>
+[@krlmlr](https://twitter.com/krlmlr) (`styler`) <br>
+[@lorenzwalthert](https://twitter.com/lorenzwalthert) (`styler`)
+]
+
+<br><br><br>
+
+.center[
+I'm [@travisgerke](https://twitter.com/travisgerke). See you there `r icon_style(fontawesome("smile", style = "regular"), scale=.75, fill="#1DA1F2", 'margin-bottom' = "8px")`
 ]
 
 ```{css, echo=FALSE}
