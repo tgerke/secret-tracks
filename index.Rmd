@@ -364,6 +364,37 @@ Daniel Sjoberg is a true hero.
 ![](images/gtsummary.gif)
 ]
 
+---
+### Color plot text with [`ggtext` `r link_icon`](https://wilkelab.org/ggtext/)
+
+- Most common: avoid need for legends by coloring plot title
+  - Much of [The Glamour of Graphics](https://www.rstudio.com/resources/rstudioconf-2020/the-glamour-of-graphics/) framework implementable through `ggtext`
+
+.pull-left-60[
+.small-code[
+```{r eval=FALSE}
+library(ggtext)
+
+ggplot(
+    ...,
+ labs(
+    title = glue::glue(
+      "Steps recorded in 2021: ",
+      "<strong style = 'color: #a9a9a9'>All days</strong>",
+      " versus ",
+      "<strong style = 'color: #b573dc'>Easter day</strong>"
+    ),
+    ...,
+```
+]
+]
+
+.pull-right-40[
+.w-90.h-center[
+![](images/easter-steps.png)
+]
+]
+
 ```{css, echo=FALSE}
 .h-center {
   margin: 0 auto;
@@ -372,6 +403,9 @@ Daniel Sjoberg is a true hero.
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.w-90 {
+  width: 90%;
 }
 .w-75 {
   width: 75%;
@@ -409,5 +443,13 @@ Daniel Sjoberg is a true hero.
 }
 .small-code .remark-code {
   font-size: 60%;
+}
+.pull-left-60 {
+    float: left;
+    width: 57%;
+}
+.pull-right-40 {
+    float: left;
+    width: 37%;
 }
 ```
