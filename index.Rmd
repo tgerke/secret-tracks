@@ -403,6 +403,43 @@ ggplot(
 ]
 
 ---
+### Make `ggplot`s interactive with [`ggiraph` `r link_icon`](https://davidgohel.github.io/ggiraph/)
+
+`plotly` is awesome but doesn't always play nice with Shiny/Xaringan (`ggiraph` does)
+
+.panelset[
+.panel[.panel-name[Make ggplots]
+.small-code[
+```{r}
+library(ggplot2)
+library(ggiraph)
+library(cowplot)
+
+mtcars <- mtcars
+mtcars$tooltip <- rownames(mtcars)
+
+gg1 <- ggplot(mtcars) +
+  geom_point_interactive(aes(x = drat, y = wt, color = qsec,
+    tooltip = tooltip, data_id = tooltip), size = 4) + 
+  theme_minimal()
+
+gg2 <- ggplot(mtcars) +
+  geom_point_interactive(aes(x = qsec, y = disp, color = mpg,
+    tooltip = tooltip, data_id = tooltip ), size = 4) + 
+  theme_minimal()
+```
+]
+]
+.panel[.panel-name[Make ggiraph]
+.small-code[
+```{r}
+girafe(ggobj = plot_grid(gg1, gg2), width_svg = 8, height_svg = 2.4)
+```
+]
+]
+]
+
+---
 ### Credits `r icon_style(fontawesome("twitter", style = "brands"), scale=.5, fill="#1DA1F2", 'margin-bottom' = "8px")`
 
 .pull-left[
@@ -419,7 +456,7 @@ ggplot(
 [@statistishdan](https://twitter.com/statistishdan) (`gtsummary`) <br>
 [@ClausWilke](https://twitter.com/ClausWilke) (`ggtext`) <br>
 [@MilesMcBain](https://twitter.com/MilesMcBain) (`datapasta`) <br>
-
+[@DavidGohel](https://twitter.com/DavidGohel) (`ggiraph`)
 ]
 
 ```{css, echo=FALSE}
