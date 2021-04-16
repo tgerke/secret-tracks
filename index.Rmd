@@ -175,7 +175,7 @@ class: inverse, center
 <span style="font-size:5em; font-family: Mansalva">secret tRacks</span>
 
 <br><br>
-.small.red[The slides do not conatin full demos: feel free to interrupt for clarification.]
+.small.red[The slides do not contain full demos: feel free to interrupt for clarification.]
 
 ---
 ### Let [`pak` `r link_icon`](https://pak.r-lib.org/) install your packages
