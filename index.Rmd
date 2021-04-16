@@ -395,6 +395,33 @@ ggplot(
 ]
 ]
 
+---
+### Copy/paste data to R with [`datapasta` `r link_icon`](https://milesmcbain.github.io/datapasta/)
+
+.w-75.h-center[
+![](images/datapasta.gif)
+]
+
+---
+### Credits `r icon_style(fontawesome("twitter", style = "brands"), scale=.5, fill="#1DA1F2", 'margin-bottom' = "8px")`
+
+.pull-left[
+[@jimhester_](https://twitter.com/jimhester_) (`pak`) <br>
+[@GaborCsardi](https://twitter.com/GaborCsardi) (`pak`, `asciicast`)<br>
+[@dataandme](https://twitter.com/dataandme) (`asciicast`) <br>
+[@grrrck](https://twitter.com/grrrck/) (`ermoji`, `xaringanExtra`) <br>
+[@mitchoharawild](https://twitter.com/mitchoharawild) (`icon`) <br>
+[@hadleywickham](https://twitter.com/hadleywickham) (`waldo`) 
+]
+.pull-right[
+[@thomasp85](https://twitter.com/thomasp85) (`ragg`) <br>
+[@samfirke](https://twitter.com/samfirke) (`janitor`) <br>
+[@statistishdan](https://twitter.com/statistishdan) (`gtsummary`) <br>
+[@ClausWilke](https://twitter.com/ClausWilke) (`ggtext`) <br>
+[@MilesMcBain](https://twitter.com/MilesMcBain) (`datapasta`) <br>
+
+]
+
 ```{css, echo=FALSE}
 .h-center {
   margin: 0 auto;
